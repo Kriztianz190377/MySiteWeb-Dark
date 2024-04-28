@@ -1,0 +1,35 @@
+
+.navbar_desktop{
+   display: none;
+   font-size: 1.5rem;
+   
+}
+.navbar_desktop li{   
+   transition-property: color;
+    transition: ease-in 300ms;
+}
+.navbar_desktop li:hover {
+    color: var(--hover)
+}
+
+
+
+@media (min-width:920px) {
+    
+    .navbar_desktop{
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        width: 40%;
+     }
+
+}
+@media (min-width:1024px) {
+        .navbar_desktop{
+        font-size: 1.8rem;
+     }
+    
+}
+

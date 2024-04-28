@@ -1,0 +1,29 @@
+{
+  "languages": "ES",
+  "navbar": {
+    "about": "sobre mi",
+    "projects": "proyectos",
+    "contact": "contacto"
+  },
+  "about": {
+    "p1": "Hola, mi nombre es",
+    "h2": "Christian Castaneda",
+    "p2": "Soy",
+    "h1": "Desarrollador Front-End",
+    "p3": "Titular de una formación de analista-programador orientada a Internet, con conocimientos en la creación de aplicaciones y sitios web "
+  },
+  "projects": {
+    "ptitle": "proyectos",
+    "psubtitle": "estas son las tecnologías con las que trabajo."
+  },
+  "contact": {
+    "ptitle": " contacto",
+    "psubtitle": "contactame usando el siguiente formulario.",
+    "email": "correo",
+    "msnemail": "enviar mensaje",
+    "msngihub": "mirar",
+    "msnwhatsapp": "enviar mensaje",
+    "name":"nombre",
+    "message":"mensaje"
+  }
+}

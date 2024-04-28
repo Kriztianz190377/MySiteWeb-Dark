@@ -1,0 +1,29 @@
+{
+  "languages": "EN",
+  "navbar": {
+    "about": "about ",
+    "projects": "projects",
+    "contact": "contact"
+  },
+  "about": {
+    "p1": "Hi, my name is",
+    "h2": "Christian Castaneda",
+    "p2": "I'm a",
+    "h1": "Front-End Developer",
+    "p3": "Holder of an internet-oriented programmer-analyst training. With knowledge in building responsive applications and website"
+  },
+  "projects": {
+    "ptitle": "projects",
+    "psubtitle": "these are the technologies I work with."
+  },
+  "contact": {
+    "ptitle": " contact",
+    "psubtitle": "contact me using the following form.",
+    "email": "email",
+    "msnemail": "send message",
+    "msngihub": "look at",
+    "msnwhatsapp": "send message",
+    "name":"name",
+    "message":"message"
+  }
+}

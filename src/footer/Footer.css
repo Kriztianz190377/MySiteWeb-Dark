@@ -1,0 +1,23 @@
+.footer {
+    background-color: #1e1d1d;
+    color: rgb(93, 91, 91);
+    padding: 1rem;
+
+}
+
+.fotter_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    
+}
+
+
+.fotter_text a {
+    color: var(--hover);
+    text-decoration: none;
+    font-size: 2.5rem;
+}
+
