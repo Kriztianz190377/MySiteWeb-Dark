@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+import projectsArray from '../helpers/projects.js'
 import { BsGithub } from "react-icons/bs";
 import FV from "../assets/logo/Festival-r.png";
 import AW from "../assets/logo/weatherApi-r.png";
@@ -7,128 +10,77 @@ import GA from "../assets/logo/gifApp-r.png";
 import CT from "../assets/logo/crypto-tailwimd.png";
 import TA from "../assets/logo/topActress-r.png";
 import BS from "../assets/logo/Expert-bs.png";
-import Project from './Project';
 
 
-import './Projects.css'
-export const Projects = ({ objecLanguage }) => {
+export const Projects = () => {
 
-  const { projects } = objecLanguage
-   
+  const { objecLanguage } = useContext(DataContext);
+  const { projects } = objecLanguage;
+
+  const projectLogos = {
+    FV,
+    AW,
+    VT,
+    CM,
+    GA,
+    CT,
+    TA,
+    BS
+  };
   return (
-
     <div
+      className=" container m-auto w-10/12 md:w-6/12"
       name="projects"
-      className="projects container"
     >
-      <div className="project_content">
-        
-        <header className="title">
-          <p className="">
-            {projects.ptitle}
-          </p>
-          <p className="">{`// ${projects.psubtitle}`}</p>
+      <div className=" ">
+        <header className=" mb-5 ">
+          <p className="capitalize font-bold text-4xl mb-5">{projects.ptitle}</p>
+          <p className="transition-colors duration-300 ease-in hover:text-hover ">{`// ${projects.psubtitle}`}</p>
         </header>
+        <main className="onlyProjects flex flex-wrap justify-between ">
 
-        <main className="onlyProjects">
+          {projectsArray.map(projecUni => (
 
-          <article className=" ">
-            <Project
-              title={"React.Js"}
-              subtitle={"@Vite/Tailwind Css"}
-              src={VT}
-              alt={"Veterinary"}
-              websitename={"https://veterinary.ccldev.com"}
-              href={"https://github.com/Kriztianz190377/Veterinary"}
-              icon={<BsGithub />}
-            />
-          </article>
+            <article key={projecUni.src} className="w-full sm:w-5/12 md:w-29 shadow-2xl ">
+              <div className="py-8">
+                <header className="text-center">
 
-          <article className="">
-            <Project
-              title={"React.Js"}
-              subtitle={"Crypto"}
-              src={CT}
-              alt={"Veterinary"}
-              websitename={"https://cryptotw.ccldev.com/"}
-              href={"https://github.com/Kriztianz190377/Crypto-TailwindCss"}
-              icon={<BsGithub />}
-            />
-          </article>
-          <article className=" ">
-            <Project
-              title={"React.Js"}
-              subtitle={"@Vite/Styled-Components"}
-              src={CM}
-              alt={"Crypto"}
-              websitename={"https://crypto.ccldev.com/"}
-              href={"https://github.com/Kriztianz190377/Crypto"}
-              icon={<BsGithub />}
-            />
-          </article>
-          <article >
-            <Project
-              title={"React.Js"}
-              subtitle={"Css3"}
-              src={GA}
-              alt={"Veterinary"}
-              websitename={"https://kriztianz190377.github.io/Gif-react"}
-              href={"https://github.com/Kriztianz190377/Gif-react"}
-              icon={<BsGithub />}
-            />
-          </article>
+                  <h2 className="text-2xl font-bold mb-2">{projecUni.title}</h2>
 
-          <article >
-            <Project
-              title={"React.Js"}
-              subtitle={"Sass/GulpJs"}
-              src={FV}
-              alt={"Festival/Sass"}
-              websitename={"https://festival.ccldev.com"}
-              href={"https://github.com/Kriztianz190377/FestivalReact"}
-              icon={<BsGithub />}
-            />
-          </article>
-          <article >
-            <Project
-              title={"JavaScript"}
-              subtitle={"Sass/Html"}
-              src={AW}
-              alt={"Weather App"}
-              websitename={"https://weather.ccldev.com"}
-              href={"https://github.com/Kriztianz190377/SassWeatherApi"}
-              icon={<BsGithub />}
-            />
-          </article>
 
-          <article >
-            <Project
-              title={"jQuery"}
-              subtitle={"Css3"}
-              src={TA}
-              alt={"jQuery"}
-              websitename={"https://actrice.ccldev.com"}
-              href={"https://github.com/Kriztianz190377/jQuery"}
-              icon={<BsGithub />}
-            />
-          </article>
-          <article >
-            <Project
-              title={"Bootstrap 5"}
-              subtitle={"Html"}
-              src={BS}
-              alt={"Bootstrao 5"}
-              websitename={"https://expert-bs.ccldev.com"}
-              href={"https://github.com/Kriztianz190377/expert-bs"}
-              icon={<BsGithub />}
-            />
-          </article>
+                  <h3 className="text-lg mb-4">{projecUni.subtitle}</h3>
+                </header>
+                <main>
+                  <a href={projecUni.websitename} target="_blank" className="">
+                    <img
+                      className="img object-cover object-center h-48 w-60 mx-auto mb-4"
+                      src={projectLogos[projecUni.src]}
+                      alt={projecUni.alt}
+                    />
+                  </a>
+                </main>
+                <footer className="text-center">
+                  <a
+                    href={projecUni.href}
+                    target="_blank"
+                    className="block mb-2"
+                  >
+                    <p className="linkName">{projecUni.websitename}</p>{" "}
+                    <p className="icon"><BsGithub/></p>
+
+                  </a>
+                </footer>
+              </div>
+            </article>
+          ))}
+
+
 
         </main>
-
       </div>
     </div>
-
   );
 };
+
+
 

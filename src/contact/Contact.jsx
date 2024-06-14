@@ -1,114 +1,94 @@
-import { MdOutlineEmail } from 'react-icons/md'
+import { MdOutlineEmail } from 'react-icons/md';
 import { BsGithub, BsWhatsapp } from "react-icons/bs";
-
-import React, { useRef } from 'react';
+import { DataContext } from '../context/DataContext';
+import React, { useContext, useRef } from 'react';
 import emailjs from "@emailjs/browser";
-import './Contact.css'
+// import sendEmail from '../helpers/sendEmail';
 import Article from './Article';
 
-export const Contact = ({ dark, objecLanguage }) => {
-
-  const { contact} = objecLanguage 
-
+export const Contact = () => {
+  const { dark, objecLanguage} = useContext(DataContext);
+  const { contact } = objecLanguage;
   const form = useRef();
+
   const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_myvkoyl",
-        "template_yi85kyb",
-        form.current,
-        "pPXM2ktdd2EUaQtT2"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset()
-  };
+    
+     e.preventDefault();
+     emailjs
+       .sendForm(
+         "service_t7n0w8a",
+         "template_j67vxnv",
+         form.current,
+         "pPXM2ktdd2EUaQtT2"
+       )
+       .then(
+         (result) => {
+           console.log(result.text);
+           alert('mensaje enviado')
+         },
+         (error) => {
+           console.log(error.text);
+         }
+       );
+     e.target.reset();
+   };
+ 
 
   return (
     <div
+      className=" container m-auto w-10/12 md:w-6/12 mb-10"
       name="contact"
-      className=" contact container"
     >
-      {/* Container */}
-      <div className="contact_content">
-
-        <header className="title">
-          <p className="">
-            {contact.ptitle}
-          </p>
-          <p className="">// {contact.psubtitle}</p>
+      <div className=" ">
+        <header className=" mb-10 ">
+          <p className="capitalize font-bold text-4xl mt-20 mb-5">{contact.ptitle}</p>
+          <p className="transition-colors duration-300 ease-in hover:text-hover ">{`// ${contact.psubtitle}`}</p>
         </header>
+        <main className="w-full flex flex-col lg:flex-row gap-10">
+          <aside className='w-full lg:w-2/6 flex flex-col items-center justify-between gap-8 '>
 
-        <main>
-
-          <aside className='aside'>
-            <Article
-              icons={<MdOutlineEmail />}
-              title={contact.email}
-              href={"mailto:kriztianz@hotmail.com "}
-              msn={contact.msnemail}
-            />
-            <Article
-              icons={<BsGithub />}
-              title={"GitHub"}
-              href={"https://github.com/Kriztianz190377"}
-              msn={contact.msngihub
-              }
-            />
-            <Article
-              icons={<BsWhatsapp />}
-              title={"WhatsApp"}
-              href={"https://wa.me/+14383966910"}
-              msn={contact.msnwhatsapp}
-            />
-
-
+           <Article/>
+             
           </aside>
-          {/* TODO enviar mensaje de respuesta al correo del emisario */}
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-          >
-            <div className="form_input">
 
-              <input
-                style={dark == "dark" ? { borderColor: "#fff" } : { borderColor: "#C83A6E" }}
-                type="text"
-                placeholder={contact.name}
-                name="name"
-                id="name"
-              />
-              <input
-                style={dark == "dark" ? { borderColor: "#fff" } : { borderColor: "#C83A6E" }}
-                type="email"
-                placeholder={contact.email}
-                name="email"
-                id="email"
-              />
-              <textarea
-                style={dark == "dark" ? { borderColor: "#fff" } : { borderColor: "#C83A6E" }}
-                name="message"
-                placeholder={contact.message}
-                id="message"
-                rows="10"
-              ></textarea>
-              <button
-                className="btn"
-                style={dark == "dark" ? { borderColor: "#fff" } : { borderColor: "#C83A6E" }}
-                type="submit"
-              >
-                {contact.msnemail}
-              </button>
-            </div>
+
+          <form ref={form} onSubmit={sendEmail} 
+          className="w-full lg:w-4/6 flex flex-col gap-6">
+            <input
+              className={`p-4 border-2 rounded-md bg-transparent text-xl font-bold ${dark === "dark" ? "border-white" : "border-pink-500"}`}
+              type="text"
+              placeholder={contact.name}
+              name="name"
+              id="name"
+            />
+            <input
+              className={`p-4 border-2 rounded-md bg-transparent text-xl font-bold ${dark === "dark" ? "border-white" : "border-pink-500"}`}
+              type="email"
+              placeholder={contact.email}
+              name="email"
+              id="email"
+            />
+            <input
+              className={`p-4 border-2 rounded-md bg-transparent text-xl font-bold ${dark === "dark" ? "border-white" : "border-pink-500"}`}
+              type="number"
+              placeholder={contact.phone}
+              name="phone"
+              id="phone"
+            />
+            <textarea
+              className={`p-4 border-2 rounded-md bg-transparent text-xl font-bold ${dark === "dark" ? "border-white" : "border-pink-500"}`}
+              name="message"
+              placeholder={contact.message}
+              id="message"
+              rows="10"
+            ></textarea>
+            <button
+              className={`p-4 border-2 rounded-md bg-transparent text-xl font-bold ${dark === "dark" ? "border-white" : "border-pink-500"} hover:bg-pink-500 transition duration-300`}
+              type="submit"
+            >
+              {contact.msnemail}
+            </button>
           </form>
-
         </main>
       </div>
     </div>

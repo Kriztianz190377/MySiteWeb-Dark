@@ -6,15 +6,15 @@
     "contact": "contacto"
   },
   "about": {
-    "p1": "Hola, mi nombre es",
+    "p1": "Hola, soy",
     "h2": "Christian Castaneda",
     "p2": "Soy",
     "h1": "Desarrollador Front-End",
-    "p3": "Titular de una formación de analista-programador orientada a Internet, con conocimientos en la creación de aplicaciones y sitios web "
+    "p3": "Especializado en crear experiencias web atractivas y cautivadoras, con habilidades en el desarrollo de aplicaciones y sitios web... "
   },
   "projects": {
     "ptitle": "proyectos",
-    "psubtitle": "estas son las tecnologías con las que trabajo."
+    "psubtitle": "Estas son las tecnologías con las que tengo experiencia."
   },
   "contact": {
     "ptitle": " contacto",
@@ -24,6 +24,9 @@
     "msngihub": "mirar",
     "msnwhatsapp": "enviar mensaje",
     "name":"nombre",
-    "message":"mensaje"
+    "message":"mensaje",
+    "phone":"celular"
   }
 }
+
+

@@ -1,38 +1,33 @@
-import React from 'react'
-import { Link } from "react-scroll";
+import React, { useContext } from 'react';
+import { Link as LinkRS} from "react-scroll";
+import { DataContext } from '../../context/DataContext';
 
-import "./NavbarDesktop.css"
 
-const NavbarDesktop = ({objecLanguage}) => {
-    const {navbar}=objecLanguage    
+
+const NavbarDesktop = () => {
+    const {objecLanguage} = useContext(DataContext);
+
+    const { navbar } = objecLanguage;
 
     return (
-        <ul className="navbar_desktop">
-            
-            <li >
-                <Link to="about" 
-                smooth={true} 
-                duration={500}>
+        <ul className="hidden md:flex justify-between items-center cursor-pointer w-2/5 text-inherit">
+            <li className="transition-colors duration-300 ease-in hover:text-hover">
+                <LinkRS to="about" smooth={true} duration={500}>
                     {navbar.about}
-                </Link>
+                </LinkRS>
             </li>
-            <li >
-                <Link to="projects" 
-                smooth={true} 
-                duration={500}>
-                {navbar.projects}
-                </Link>
+            <li className="transition-colors duration-300 ease-in hover:text-hover">
+                <LinkRS to="projects" smooth={true} duration={500}>
+                    {navbar.projects}
+                </LinkRS>
             </li>
-            
-            <li >
-                <Link to="contact" 
-                smooth={true} 
-                duration={500}>
-                {navbar.contact}
-                </Link>
+            <li className="transition-colors duration-300 ease-in hover:text-hover">
+                <LinkRS to="contact" smooth={true} duration={500}>
+                    {navbar.contact}
+                </LinkRS>
             </li>
         </ul>
-    )
-}
+    );
+};
 
-export default NavbarDesktop
+export default NavbarDesktop;

@@ -1,26 +1,31 @@
-import React from "react";
 
-import './Footer.css'
-export const Footer = ({dark}) => {
+import React, { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+
+export const Footer = () => {
+
+  const { dark } = useContext(DataContext)
+
   return (
-    <footer 
-    name="footer" 
-    className="footer"
-    style={dark==="dark"?{backgroundColor:'#000'}:{backgroundColor:'#292B66',color:'#fff'}}
+    <footer
+      name="footer"
+      className={`
+        flex justify-center items-center py-4 px-4
+        ${dark ==="bg-bgDark text-textColorLight"? "bg-black text-gray-500" : "bg-blue-600 text-gray-100"}
+      `}
     >
       {/* Container */}
-      <div className="fotter_text">
-        <p >
-          {''}Created by: &nbsp;
-          <span >
-            <a href="https://ccldev.com/">ccldev.com</a>
+      <div className="text-xl font-bold text-center">
+        <p>
+          Created by: &nbsp;
+          <span>
+            <a href="https://ccldev.com/" className="text-blue-400 hover:text-blue-500 underline">
+              ccldev.com
+            </a>
           </span>
         </p>
-        <p>&nbsp;| &#9400; 2023 September  all rights reserved.</p>
-
+        <p>&nbsp;| &#9400; 2024 September all rights reserved.</p>
       </div>
     </footer>
   );
 };
-
-
