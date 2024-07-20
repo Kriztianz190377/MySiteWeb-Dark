@@ -8,7 +8,7 @@ import { Contact } from './contact/Contact';
 import './App.css'
 import { Footer } from './footer/Footer';
 
-{/* //TODO: no cierra menu en responsive mobil */ }
+
 
 function App() {
   const { dark } = useContext(DataContext)

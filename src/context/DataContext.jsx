@@ -12,6 +12,7 @@ export const DataProvider = ({children}) => {
     const [objecLanguage, setObjecLanguage] = useState(EN)
     const [darkAbout, setDarkAbout] = useState(true)
     const [nav, setNav] = useState(false);
+    const handleClick = () => setNav(!nav);
     useEffect(() => {
         if (changeLanguage === 'EN') return setObjecLanguage(EN)
         if (changeLanguage === 'ES') return setObjecLanguage(ES)
@@ -35,6 +36,7 @@ export const DataProvider = ({children}) => {
                 changeLanguage, setChangeLanguage,
                 objecLanguage, setObjecLanguage,
                 darkAbout, setDarkAbout,
+                handleClick,
                 handleChange,
                 nav, setNav,
          

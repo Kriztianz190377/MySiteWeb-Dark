@@ -12,9 +12,9 @@ import LGV from "../assets/logo/Logo-Ccl-pinkVer.svg";
 
 export const Navbar = () => {
  
-  const {nav, setNav} = useContext(DataContext);
+  const {nav, setNav,handleClick} = useContext(DataContext);
 
-  const handleClick = () => setNav(!nav);
+ 
 
   return (
     <section className="w-full bg-inherit text-inherit fixed flex 

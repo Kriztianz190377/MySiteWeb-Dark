@@ -6,7 +6,7 @@ const NavbarMobil = () => {
 
   const { objecLanguage, nav, dark, handleClick } = useContext(DataContext);
   const { navbar } = objecLanguage
-
+   console.log(typeof handleClick)
   return (
     <ul className={`text-inherit ${nav ? 'absolute top-36 left-0 w-full h-screen pt-40 flex flex-col justify-start items-center gap-20 z-0' : 'hidden'} ${dark ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
       <li className="p-4  transition-colors duration-300 ease-in hover:text-pink-700">
