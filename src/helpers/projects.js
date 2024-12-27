@@ -1,6 +1,15 @@
 
 const projects = [
     {
+      title: "TypeScript - React.Js",
+      subtitle: "@Vite/Tailwind Css",
+      src: "TC",
+      alt: "Tip-calculator",
+      websitename: "https://tip-calculator.ccldev.com/",
+      href: "https://github.com/Kriztianz190377/tip-calculator",
+    
+    },
+    {
       title: "React.Js",
       subtitle: "@Vite/Tailwind Css",
       src: "VT",

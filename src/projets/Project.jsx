@@ -12,7 +12,6 @@ const Project = ({
 }) => {
   return (
     <>
-
       <header className=" project">
 
         <h2 className=" ">{title}</h2>
@@ -23,21 +22,17 @@ const Project = ({
           <a href={websitename} target="_blank" className="">
             <img className="img" src={src} alt={alt} height={200} width={250}/>
           </a>
-        
-      
+             
       </main>
-
       <footer className=" ">
         <a
           href={href}
-          target="_blank"
-          className=""
+          target="_blank"         
         >
           <p className="linkName">{websitename}</p>{" "}
           <p className="icon ">{icon}</p>
         </a>
-      
-      </footer>
+            </footer>
 
     </>
   );
